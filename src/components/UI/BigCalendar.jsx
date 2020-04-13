@@ -7,6 +7,22 @@ import { ScheduleModal } from './CustomModal'
 const localizer = momentLocalizer(moment)
 
 function BigCalendar(props) {
+
+    const eventStyleGetter = (events,color) => {
+        var style = {
+            backgroundColor: color,
+            borderRadius: '0px',
+            opacity: 0.8,
+            color: 'black',
+            border: '1px',
+            borderRadius: "10px",
+            display: 'block'
+        };
+        return {
+            style: style
+        };
+    }
+
     console.log(props)
     const [modalShow, setModalShow] = React.useState(false);
     return (
@@ -30,6 +46,7 @@ function BigCalendar(props) {
       events={props.events}
       startAccessor="start"
       endAccessor="end"
+      eventPropGetter={(eventStyleGetter)}
       style={{ height: "65vh" }}
     /> : <LinearProgress /> }
     </div>
