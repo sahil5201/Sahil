@@ -6,6 +6,7 @@
   height: 100vh;
   background: linear-gradient(to right, whitesmoke,ghostwhite);
 }
+
 .disabled {
   color: #6c757d;
   pointer-events: none;
