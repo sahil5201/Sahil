@@ -20,3 +20,14 @@
     border-radius: 20px;
     background-color: #33b5e5;
   }
+
+  .colorPicker input[type="radio"] {
+    display: none;
+  }
+
+  .colorPicker .btn span.material-icons {    			
+    opacity: 0;				
+  }
+  .colorPicker .btn.active span.material-icons {				
+    opacity: 1;				
+  }

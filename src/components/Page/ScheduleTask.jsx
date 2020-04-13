@@ -10,9 +10,10 @@ function ScheduleTask() {
     const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchData());
+    dispatch(fetchData("Schedule"));
   }, []);
 
+  console.log(task);
   const myEventsList = task ? [ ] : null ;
   
   const data = task ? (
@@ -20,8 +21,9 @@ function ScheduleTask() {
         myEventsList.push({
             id: item.id,
             title: item.task.Task,
-            start: new Date(moment(item.task.Date).format("YYYY, M , D  HH:MM")),
-            end: new Date(new Date(item.task.Date).setHours(new Date(item.task.Date).getHours()+8)),
+            color: item.task.color ? item.task.color : "",
+            start: new Date(item.task.startDate),
+            end: new Date(item.task.endDate),
         }) 
     })) : "";
 
