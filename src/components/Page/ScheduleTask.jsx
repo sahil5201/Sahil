@@ -3,17 +3,15 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchData } from '../../redux/action/TaskAction';
 import BigCalendar from '../UI/BigCalendar';
-import moment from 'moment';
 
 function ScheduleTask() {
-    const task = useSelector((state) => state.task);
+    const task = useSelector((state) => state.Task.task);
     const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchData("Schedule"));
   }, []);
 
-  console.log(task);
   const myEventsList = task ? [ ] : null ;
   
   const data = task ? (

@@ -8,19 +8,21 @@ const localizer = momentLocalizer(moment)
 
 function BigCalendar(props) {
 
-    const eventStyleGetter = (events,color) => {
-        var style = {
-            backgroundColor: color,
-            borderRadius: '0px',
+  const [modalShow, setModalShow] = React.useState(false);
+  const [PopupShow, setPopupShow] = React.useState(false);
+  const [PopupData, setPopupData] = React.useState([]);
+  
+  const eventColor = (event)=>{
+      return {
+        style : {
+            backgroundColor: event.color,
             opacity: 0.8,
             color: 'black',
             border: '1px',
             borderRadius: "10px",
             display: 'block'
-        };
-        return {
-            style: style
-        };
+        }
+        }
     }
 
     console.log(props)

@@ -1,7 +1,4 @@
 const defaultState = {
-    name : "Sahil",
-    count: 1,
-    status : true,
     task: null
 }
 
@@ -10,14 +7,10 @@ const TaskReducer = (state=defaultState,action) => {
       case "INSERT":
         return {
           ...state,
-          name: "ABC",
-          count: state.count + 1,
         };
       case "DELETE":
         return {
           ...state,
-          name: "SAHIL",
-          count: state.count - 1,
         };
       case "Check":
         return {

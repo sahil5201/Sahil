@@ -8,7 +8,7 @@ import {
 import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
 import { useDispatch } from "react-redux";
-import { insertData, fetchData } from "../../redux/action/TaskAction";
+import { insertData } from "../../redux/action/TaskAction";
 
 
 export default function CustomModal(props) {
@@ -180,7 +180,6 @@ export function ScheduleModal(props) {
 }
 
 export function EventPopup(props){
-  console.log(props)
     return (
       <Modal
         {...props}
